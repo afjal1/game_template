@@ -47,26 +47,75 @@ class MyHomePageState extends State<HomePageController> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       drawer: Drawer(
+        backgroundColor: Colors.black,
         child: ListView(
           children: [
             DrawerHeader(
+              decoration: const BoxDecoration(color: Colors.black),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
-                  Text("Welcome to -"),
-                  // SingleChildScrollView(
-                  //   scrollDirection: Axis.horizontal,
-                  //   child: DesignText.b2(
-                  //     user!.isAnonymous
-                  //         ? "Assam Exam Prep. - Complete Mock Test"
-                  //         : user!.email.toString(),
-                  //     fontWeight: 600,
-                  //     xMuted: true,
-                  //   ),
-                  // ),
+                  Text("Hey Guest",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Divider(
+                    thickness: 2,
+                    color: Colors.white,
+                  ),
                 ],
               ),
+            ),
+            const ListTile(
+              leading: Icon(
+                Icons.play_for_work,
+                color: Colors.white,
+              ),
+              title: Text(
+                'Play Game',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const ListTile(
+              leading: Icon(
+                Icons.play_for_work,
+                color: Colors.white,
+              ),
+              title: Text(
+                'Play Game',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const ListTile(
+              leading: Icon(
+                Icons.play_for_work,
+                color: Colors.white,
+              ),
+              title: Text(
+                'Play Game',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 18,
             ),
           ],
         ),

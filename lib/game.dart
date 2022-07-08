@@ -23,7 +23,15 @@ class _GamesScreenState extends State<GamesScreen> {
                 parent: AlwaysScrollableScrollPhysics()),
             primary: false,
             padding: const EdgeInsets.all(6.0),
-            children: const [NewGamesItem()]));
+            children: const [
+              NewGamesItem(),
+              NewGamesItem(),
+              NewGamesItem(),
+              NewGamesItem(),
+              NewGamesItem(),
+              NewGamesItem(),
+              NewGamesItem()
+            ]));
   }
 }
 
@@ -57,9 +65,13 @@ class NewGamesItem extends StatelessWidget {
                   bottomRight: 0,
                   topRight: 0,
                   onPressed: () {},
-                  textLabel: '${12} ',
+                  textLabel: '${1200} ',
                   colorText: Colors.white,
-                  icon: const Icon(Icons.play_circle, color: Colors.white)),
+                  icon: const Icon(
+                    Icons.play_circle,
+                    color: Colors.white,
+                    size: 30,
+                  )),
             ),
           ],
         ),
@@ -79,55 +91,12 @@ class TournamentsScreen extends StatelessWidget {
       SystemUiMode.immersiveSticky,
     );
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        // backgroundColor: Colors.blueAccent,
-        title: const SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Text(
-            'Title',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ),
-      body: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            elevation: 2,
-            // backgroundColor: Colors.blueAccent,
-            automaticallyImplyLeading: false,
-            flexibleSpace: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
-                TabBar(
-                  automaticIndicatorColorAdjustment: true,
-                  tabs: [
-                    Tab(
-                        child: Text('New',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white))),
-                    // Tab(
-                    //     child: DesignText.b1("Ongoing",
-                    //         color: Colors.white, fontWeight: 800)),
-                    Tab(
-                        child: Text('Results',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white))),
-                  ],
-                )
-              ],
-            ),
-          ),
-          body: const TabBarView(
-            children: [Text('Hello 1'), Text('Hello 2')],
+      body: Scaffold(
+        body: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [Text('Hello 1'), Text('Hello 2')],
           ),
         ),
       ),

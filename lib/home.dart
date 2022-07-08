@@ -19,7 +19,7 @@ class MyHomePageState extends State<HomePageController> {
           '$msg',
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.blue[700],
+        backgroundColor: Colors.black,
         behavior: SnackBarBehavior.floating,
       ),
     );
@@ -46,59 +46,34 @@ class MyHomePageState extends State<HomePageController> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // drawer: Drawer(
-      //   child: ListView(
-      //     children: [
-      //       DrawerHeader(
-      //         child: Column(
-      //           crossAxisAlignment: CrossAxisAlignment.start,
-      //           mainAxisAlignment: MainAxisAlignment.end,
-      //           children: [
-      //             DesignContainer.rounded(
-      //               allPadding: 0,
-      //               clipBehavior: Clip.antiAliasWithSaveLayer,
-      //               child: CachedNetworkImage(
-      //                   height: 64,
-      //                   width: 64,
-      //                   imageUrl: user!.isAnonymous
-      //                       ? AppInformation().skipUserProfile
-      //                       : user!.photoURL.toString(),
-      //                   fit: BoxFit.cover),
-      //             ),
-      //             DesignText.b1(
-      //               user!.isAnonymous
-      //                   ? "Welcome to -"
-      //                   : user!.displayName.toString(),
-      //               fontWeight: 700,
-      //             ),
-      //             // SingleChildScrollView(
-      //             //   scrollDirection: Axis.horizontal,
-      //             //   child: DesignText.b2(
-      //             //     user!.isAnonymous
-      //             //         ? "Assam Exam Prep. - Complete Mock Test"
-      //             //         : user!.email.toString(),
-      //             //     fontWeight: 600,
-      //             //     xMuted: true,
-      //             //   ),
-      //             // ),
-      //             TextButton(
-      //               onPressed: () {
-      //                 Navigator.of(context).push(
-      //                   MaterialPageRoute(
-      //                     builder: (BuildContext context) => const AdminPage(),
-      //                   ),
-      //                 );
-      //               },
-      //               child: const DesignText('Admin Page'),
-      //             )
-      //           ],
-      //         ),
-      //       ),
-      //     ],
-      //   ),
-      // ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: const [
+                  Text("Welcome to -"),
+                  // SingleChildScrollView(
+                  //   scrollDirection: Axis.horizontal,
+                  //   child: DesignText.b2(
+                  //     user!.isAnonymous
+                  //         ? "Assam Exam Prep. - Complete Mock Test"
+                  //         : user!.email.toString(),
+                  //     fontWeight: 600,
+                  //     xMuted: true,
+                  //   ),
+                  // ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.black,
+        title: const Text('Flutter Theme'),
         //     ? DesignColor.blackFront
         //     : Colors.white,
         elevation: _currentIndex == 2 ? 0.0 : 0.6,
@@ -159,7 +134,7 @@ class MyHomePageState extends State<HomePageController> {
   Widget getBody() {
     List<Widget> pages = const [
       GamesScreen(),
-      GamesScreen(),
+      TournamentsScreen(),
     ];
     return IndexedStack(
       index: _currentIndex,
